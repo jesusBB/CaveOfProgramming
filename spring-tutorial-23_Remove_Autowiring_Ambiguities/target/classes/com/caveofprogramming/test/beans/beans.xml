@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	default-init-method="init" default-destroy-method="destroy"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-autowire="byType"
+	>
+
+
+	<bean id="logger" class="com.caveofprogramming.test.Logger">
+
+	</bean>
+
+<!-- 	With the primary attribute set to true, we can say to Spring that in case of ambiguity this bean has top priority to be injected and Spring won´t check the others bean that match with the criteria. -->
+	<bean id="consoleWriter"
+		class="com.caveofprogramming.test.ConsoleWriter" primary="true">
+	</bean>
+	
+	<bean id="panda" class="com.caveofprogramming.test.ConsoleWriter">
+	</bean>
+
+
+	<bean id="fileWriter" class="com.caveofprogramming.test.FileWriter">
+
+	</bean>
+
+	<bean id="squirel" class="com.caveofprogramming.test.FileWriter"
+		autowire-candidate="false">
+<!-- 	With autowire-candidate set to false we can specify that we don´t want this bean as a candidate to have in mind when Spring is injecting the beans by default	 -->
+		
+
+	</bean>
+
+</beans>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+
+	<bean id="logger" class="com.caveofprogramming.test.Logger"></bean>
+
+
+	<bean id="consoleWriter"
+		class="com.caveofprogramming.test.ConsoleWriter">
+	<qualifier value="toconsole"></qualifier>
+	</bean>
+
+	<bean id="asdfasdf" class="com.caveofprogramming.test.ConsoleWriter">
+	</bean>
+	
+	<bean id="fileWriter" class="com.caveofprogramming.test.FileWriter">
+
+	</bean>
+
+
+	<context:annotation-config></context:annotation-config>
+	
+<!-- 	To be able to use annotation in Spring we need to add the context namespace on top and the previous tag to our beans.xml file -->
+	
+</beans>
