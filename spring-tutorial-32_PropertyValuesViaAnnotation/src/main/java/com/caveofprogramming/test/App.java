@@ -10,7 +10,7 @@ public class App {
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext("com/caveofprogramming/test/beans/beans.xml");
 		
-		Robot robot = (Robot) context.getBean("logger");
+		Robot robot = (Robot) context.getBean("robot");
 		
 		robot.speak();
 		((ClassPathXmlApplicationContext)context).close();
