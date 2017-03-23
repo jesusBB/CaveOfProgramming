@@ -9,7 +9,7 @@ public class App {
 	public static void main(String[] args) {
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext("com/caveofprogramming/test/beans/beans.xml");
-		
+		System.out.println("yeah");
 		Logger logger = (Logger) context.getBean("logger");
 		
 		logger.writeConsole("Hello there");
