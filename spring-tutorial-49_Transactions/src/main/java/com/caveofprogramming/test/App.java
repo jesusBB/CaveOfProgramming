@@ -20,16 +20,10 @@ public class App {
 		List<Offer> offers = new ArrayList<Offer>();
 		try {
 			
-			Offer offer2 = new Offer(7, "Claire", "Claire@caveofprogramming.com", "Web design to fit any budget");
-			if(offersDAO.update(offer2)){
-				System.out.println("Object updated");
-			}else{
-				System.out.println("Cannot update the object");
-			}
-			
-			offers.add(offer2);
-			offers.add(new Offer("Jesuli", "Jesuli@caveofprogramming.com", "Cash for Software"));
-			offers.add(new Offer("Paco", "Paco@caveofprogramming.com", "Elegant web design"));
+//			Offer offer2 = new Offer(7, "Claire", "Claire@caveofprogramming.com", "Web design to fit any budget");
+//			offers.add(offer2);
+			offers.add(new Offer(6,"Jesuli", "Jesuli@caveofprogramming.com", "Cash for Software"));
+			offers.add(new Offer(2, "Paco", "Paco@caveofprogramming.com", "Elegant web design"));
 			int[] rivals = offersDAO.create(offers);
 			
 			for(int value : rivals){
