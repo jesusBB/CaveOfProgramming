@@ -6,11 +6,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class OffersController {
 	
+	/*
 	@RequestMapping("/")
-	public String showHome(HttpSession session) {
+	public ModelAndView showHome() {
 		
-		session.setAttribute("name", "Boris");
-
-		return "home2";
+		ModelAndView mv = new ModelAndView("home");
+		
+		Map<String, Object> model = mv.getModel();
+		
+		model.put("name", "<b>River</b>");
+		
+		return mv;
+	}
+	*/
+	
+	@RequestMapping("/")
+	public String showHome(Model model) {
+		
+		model.addAttribute("name", "Tiffany");
+		
+		return "home";
 	}
 }
+
