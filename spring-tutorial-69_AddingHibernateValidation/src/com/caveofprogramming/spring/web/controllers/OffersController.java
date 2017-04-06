@@ -2,6 +2,8 @@ package com.caveofprogramming.spring.web.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -43,19 +45,23 @@ public class OffersController {
 	}
 	
 	@RequestMapping("/createoffer")
-	public String createOffer() {
+	public String createOffer(Model model) {
 				
+		model.addAttribute("offer", new Offer());
+		
 		return "createoffer";
 	}
 	
 	@RequestMapping(value="/docreate", method=RequestMethod.POST)
-	public String doCreate(Model model,/* @Valid*/ Offer offer, BindingResult result) {
+	public String doCreate(Model model, @Valid Offer offer, BindingResult result) {
 
 		if(result.hasErrors()){
 			System.out.println("Form does not validated");
 			for(ObjectError error : result.getAllErrors()){
 				System.out.println(error.getDefaultMessage());
 			}
+			
+			return "createoffer";
 		}else{
 			System.out.println("Form validate");
 		}

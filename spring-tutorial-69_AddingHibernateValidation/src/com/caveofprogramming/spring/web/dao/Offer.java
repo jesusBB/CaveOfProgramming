@@ -1,10 +1,22 @@
 package com.caveofprogramming.spring.web.dao;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 public class Offer {
 	
 	private int id;
+	
+	//Localize the error message?challenge!!
+	@Size(min=5, max=100, message="Name must have a different size (between 5 and 100)")
 	private String name;
+	
+	@NotNull
+//	@Pattern(regexp="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", message="Email address invalid")
 	private String email;
+	
+	@Size(min=20, max=255, message="Text must have a different size (between 20 and 255)")
 	private String text;
 	
 	public Offer(int id, String name, String email, String text) {
