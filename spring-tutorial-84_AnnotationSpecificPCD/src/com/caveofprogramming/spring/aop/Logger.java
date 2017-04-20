@@ -59,7 +59,8 @@ public class Logger {
 		System.out.println("*************BEFORE DEMO***************");
 	}*/
 	
-	@Pointcut(value="bean(camera)")
+	//bean PCD basically says that is going to match any of the methods in the specified bean
+	/*@Pointcut(value="bean(camera)")
 	public void somePointCut(){}
 	
 	
@@ -68,6 +69,19 @@ public class Logger {
 	public void somePointCutDemo(){
 		System.out.println("*************BEFORE DEMO***************");
 	}
+	*/
 	
+	//args PCD matches any method which has the specified parameters as an argument in it.
+	//for example this one will run any method with an int (or any value that can be cast as an int) as an argument
+	//We need to be aware of all these auto casting to the value specified because we can run unwanted methods
+	@Pointcut(value="args(int)")
+	public void somePointCut(){}
+	
+	
+	
+	@Before("somePointCut()")
+	public void somePointCutDemo(){
+		System.out.println("*************BEFORE DEMO***************");
+	}
 	
 }
