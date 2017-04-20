@@ -49,7 +49,17 @@ public class Logger {
 	
 	//This PCD can be a bit tricky and unexpected. What it does is that any method who has as an argument an object of a class
 	//which is annotated with the specified class will match with the pointcut
-	@Pointcut(value="@args(Deprecated)")
+	/*@Pointcut(value="@args(Deprecated)")
+	public void somePointCut(){}
+	
+	
+	
+	@Before("somePointCut()")
+	public void somePointCutDemo(){
+		System.out.println("*************BEFORE DEMO***************");
+	}*/
+	
+	@Pointcut(value="bean(camera)")
 	public void somePointCut(){}
 	
 	
