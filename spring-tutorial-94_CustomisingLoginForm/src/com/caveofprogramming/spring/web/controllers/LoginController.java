@@ -8,6 +8,6 @@ public class LoginController {
 
 	@RequestMapping("/login")
 	public String showLogin(){
-		return "login";
+		return "mylogin";
 	}
 }

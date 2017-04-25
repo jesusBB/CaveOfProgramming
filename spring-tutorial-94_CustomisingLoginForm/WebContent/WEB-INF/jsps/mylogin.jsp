@@ -14,7 +14,7 @@
 		method='POST'>
 		<table class="formtable">
 			<tr>
-				<td>Userrrrrrrrrrrrrrr:</td>
+				<td>User:</td>
 				<td><input type='text' name='j_username' value=''></td>
 			</tr>
 			<tr>
