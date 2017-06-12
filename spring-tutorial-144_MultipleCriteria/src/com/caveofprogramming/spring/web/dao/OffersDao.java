@@ -54,10 +54,11 @@ public class OffersDao {
 		
 	}
 	
-	public boolean update(Offer offer) {
-		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(offer);
-		
-		return jdbc.update("update offers set text=:text where id=:id", params) == 1;
+	public void update(Offer offer) {
+//		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(offer);
+//		
+//		return jdbc.update("update offers set text=:text where id=:id", params) == 1;
+		session().saveOrUpdate(offer);
 	}
 	
 	public void create(Offer offer) {
